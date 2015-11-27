@@ -1,0 +1,75 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.robdich.mapsapi.MapsActivity">
+
+    <View android:id="@+id/anchorView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/panel_height"
+        android:layout_gravity="bottom"
+        android:visibility="invisible"/>
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoPanelHeight="@dimen/panel_height"
+        sothree:umanoShadowHeight="@dimen/panel_shadow_height"
+        sothree:umanoDragView="@+id/title"
+        sothree:umanoFadeColor="@android:color/transparent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/headerImage"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:background="@drawable/lighthouse"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/detailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:clickable="true"
+            android:background="#fff" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:padding="8dp"
+                android:textSize="20dp"
+                android:text="Title"
+                android:textColor="#fff"
+                android:background="#4285f4"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Description here"/>
+
+        </LinearLayout>
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+
+</FrameLayout>
+
+
